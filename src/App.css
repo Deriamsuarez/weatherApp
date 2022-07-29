@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+}
+
+body{
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.full{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.App{
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+}
+
+
+
+@keyframes logo-spin{
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  a:nth-of-type(2) .logo,
+  .fi-rr-settings {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+
+.read-the-docs {
+  color: #888;
+}
+
+.weatherCardContainer {
+  height: 600px;
+  width: 500px;
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  gap: 0.5em;
+  background-color: aliceblue;
+  padding: 1em;
+  color: #284b63;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.headerWeather {
+  height: 100px;
+  width: 100%;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.weatherCard {
+  padding: 2em;
+  height: auto;
+  width: 100%;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+
+.temperatureSpan {
+  font-size: 35px;
+  margin: 10px;
+  /* border: 1px dashed black;
+  width: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  list-style: none;
+}
+
+.temperatureSpan {
+  display: flex;
+  gap: 0.2em;
+}
+
+.temperatureSpan>i {
+  font-size: 20px;
+}
+
+li>span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+
+span>i {
+  font-size: 10px;
+}
+
+.footerCard{
+  color: white;
+  font-weight: 600;
+  margin: 10px;
+}
+
+
+#wind_Speed::after{
+  content: '  m/s';
+}
+
+#clouds::after{
+  content: '%';
+}
+
+#pressure::after{
+  content: ' mb';
+}
+
+
+@media (max-width: 670px) {
+  .weatherCardContainer {
+    width: 330px;
+    transition: 1s;
+  }
+}
