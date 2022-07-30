@@ -96,16 +96,16 @@ justify-content: center;
 .headerWeather {
   height: 100px;
   width: 100%;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 
 .weatherCard {
   padding: 2em;
   height: auto;
   width: 100%;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
 }
 
 
