@@ -41,13 +41,13 @@ button {
   display: flex;
   justify-content: space-between;
   border-radius: 8px;
-  border: 1px solid  #0093E9;
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: white;
-  color:  #0093E9;
+  /* color:  #0093E9; */
   cursor: pointer;
   transition: border-color 0.25s;
   width: 150px;
@@ -57,9 +57,11 @@ button {
 
 }
 button:hover {
-  border-color: white;
-  background-color:  #0093E9;
-  color: white;
+  /* border-color: white; */
+  background-color:  white;
+  opacity: 0.8;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important;
+
   transition: 0.25s;
 }
 button:focus,

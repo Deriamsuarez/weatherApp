@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 function App() {
 
   const [coords, setCoords] = useState()
+  const [bg, setBg] = useState('')
 
   useEffect(() => {
     const success = pos => {
@@ -19,8 +20,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className={`App ${bg}`}>
       <WeatherCard
+        setBg={setBg}
         lat={coords?.lat}
         lon={coords?.lon} />
       <Footer />
