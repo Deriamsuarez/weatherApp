@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Loader from './Loader'
 
 
 const WeatherCard = ({ lat, lon }) => {
@@ -9,30 +10,34 @@ const WeatherCard = ({ lat, lon }) => {
     const [temp, setTemp] = useState(0)
     const [temptUnit, setTempUnit] = useState('°C')
     const [temUnitInv, setTempUnitInv] = useState('°F')
+    const [loader, setLoader] = useState(true)
     let pressure = parseInt(weather?.main.pressure / 100);
 
 
     useEffect(() => {
-        if (lat & lon) {
+        if (lat && lon) {
             const APIKey = 'b82164faf94d09fc9bdfb092942ef8fb'
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKey}`
             axios.get(url)
-                .then(res => setWeather(res.data))
+                .then(res => {
+                    setWeather(res.data)
+                    setTemp(((res.data.main.temp) / 10).toFixed(1))
+                    setLoader(false)
+                })
                 .catch(err => console.log(err))
         }
 
-        setTemp(parseInt(weather?.main?.temp / 10))
-
     }, [lat, lon])
+    console.log(parseInt(weather?.main.temp) /10)
 
     function changeTemp() {
         if(temptUnit === '°C'){
-            setTemp(parseInt((temp * 9/5) + 32))
+            setTemp(((temp * 9/5) + 32).toFixed(1))
             setTempUnit('°F')
         }
         if(temptUnit != '°C'){
             setTempUnit('°C')
-            setTemp(parseInt((temp - 32 ) * 5/9))
+            setTemp(((temp - 32 ) * 5/9).toFixed(1))
         }
     }
 
@@ -44,7 +49,9 @@ const WeatherCard = ({ lat, lon }) => {
         }
     }, [temptUnit])
     
-    console.log(weather)
+    if(loader){
+        return <Loader/>
+    }else{
     return (
         <section className='weatherCardContainer'>
             <div className="headerWeather card">
@@ -58,7 +65,7 @@ const WeatherCard = ({ lat, lon }) => {
                         <span> <i className="fi fi-rr-dewpoint"></i><p>Weather description</p></span>
                     </li>
                     <li><h3 id="wind_Speed" >{weather?.wind.speed}</h3>
-                        <span><i className="fi fi-rr-cloud-showers-heavy"></i><p>Wind speed</p></span>
+                        <span><i className="fi fi-rr-wind"></i><p>Wind speed</p></span>
                     </li>
                     <li><h3 id='clouds'>{weather?.clouds.all}</h3>
                         <span><i className="fi fi-rr-cloud-sun"></i><p>Clouds</p></span>
@@ -70,7 +77,7 @@ const WeatherCard = ({ lat, lon }) => {
                 <button onClick={changeTemp }><p>Convertir a</p> <strong>{temUnitInv}</strong></button>
             </div>
         </section>
-    )
+    )}
 
 }
 export default WeatherCard

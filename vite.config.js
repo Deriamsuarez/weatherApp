@@ -6,6 +6,9 @@ server: {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()]
+  plugins: [react()],
+  server: {
+    host: true
+  }
 })
 
