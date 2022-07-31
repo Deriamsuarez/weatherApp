@@ -8,6 +8,7 @@
   display: flex;
   margin: 0 auto;
   /* text-align: center; */
+  overflow: hidden;
 }
 
 .hot{
@@ -82,7 +83,7 @@ justify-content: center;
 }
 
 .weatherCardContainer {
-  height: 650px;
+  height: 665px;
   min-height: 650px;
   width: 500px;
   transition: 1s;
@@ -90,6 +91,7 @@ justify-content: center;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  /* transform: scale(0.9); */
   /* border: 1px dashed black; */
 }
 
@@ -155,8 +157,9 @@ ul {
 
 li{
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
 }
 
 .fi{
@@ -164,10 +167,16 @@ li{
 }
 
 li>span {
-  /* display: flex; */
-  justify-content: right;
-  align-items: center;
-  gap: 0.3em;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.3em; */
+  /* border: 1px black dashed; */
+}
+
+h3{
+  display: flex;
+  right: 0;
+  justify-content: flex-end;
 }
 
 

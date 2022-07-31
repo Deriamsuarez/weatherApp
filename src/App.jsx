@@ -25,7 +25,7 @@ function App() {
         setBg={setBg}
         lat={coords?.lat}
         lon={coords?.lon} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
