@@ -11,6 +11,7 @@ const WeatherCard = ({ setBg, lat, lon }) => {
     const [temptUnit, setTempUnit] = useState('°C')
     const [tempUnitInv, settempUnitInv] = useState('°F')
     const [loader, setLoader] = useState(true)
+    const [icon, setIcon] = useState()
     let pressure = parseInt(weather?.main.pressure / 100);
 
     useEffect(() => {
@@ -21,6 +22,7 @@ const WeatherCard = ({ setBg, lat, lon }) => {
                 .then(res => {
                     setWeather(res.data)
                     setTemp(((res.data.main.temp) / 10).toFixed(1))
+                    setIcon(res.data.weather[0].icon)
                     setLoader(false)
                 })
                 .catch(err => console.log(err))
@@ -74,7 +76,7 @@ const WeatherCard = ({ setBg, lat, lon }) => {
                     <span>{weather?.name}, {weather?.sys.country} </span>
                 </div>
                 <div className="weatherCard card glassEffect">
-                    <span className='temperatureSpan'><i className="fi fi-rr-thermometer-half"></i> <strong id='temp'>{`${temp}${temptUnit}`}</strong></span>
+                    <span className='temperatureSpan'><img src={`https://openweathermap.org/img/wn/${icon}@2x.png`}/><strong id='temp'>{`${temp}${temptUnit}`}</strong></span>
                     <ul>
                         <li><h3>{weather?.weather[0].description}</h3>
                             <span> <i className="fi fi-rr-dewpoint"></i><p>Weather description</p></span>
