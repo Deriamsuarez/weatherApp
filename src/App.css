@@ -8,7 +8,8 @@
   display: flex;
   margin: 0 auto;
   /* text-align: center; */
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .hot{
