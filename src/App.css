@@ -7,7 +7,7 @@
 #root {
   display: flex;
   margin: 0 auto;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .hot{
@@ -82,13 +82,15 @@ justify-content: center;
 }
 
 .weatherCardContainer {
-  height: 600px;
+  height: 650px;
+  min-height: 650px;
   width: 500px;
   transition: 1s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  /* border: 1px dashed black; */
 }
 
 .card {
@@ -127,7 +129,7 @@ justify-content: center;
   font-size: 35px;
   margin: 10px;
   /* border: 1px dashed black; */
-  width: 150px;
+  width: 190px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -151,19 +153,27 @@ ul {
   font-size: 20px;
 }
 
-li>span {
+li{
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.fi{
+  font-size: 25px;
+}
+
+li>span {
+  /* display: flex; */
+  justify-content: right;
   align-items: center;
   gap: 0.3em;
 }
 
-span>i {
-  font-size: 10px;
-}
+
 
 span>img{
-  width: 30px;
+  width: 70px;
   /* border: 1px solid black; */
   padding: 0;
 }

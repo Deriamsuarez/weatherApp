@@ -78,17 +78,19 @@ const WeatherCard = ({ setBg, lat, lon }) => {
                 <div className="weatherCard card glassEffect">
                     <span className='temperatureSpan'><img src={`https://openweathermap.org/img/wn/${icon}@2x.png`}/><strong id='temp'>{`${temp}${temptUnit}`}</strong></span>
                     <ul>
-                        <li><h3>{weather?.weather[0].description}</h3>
-                            <span> <i className="fi fi-rr-dewpoint"></i><p>Weather description</p></span>
+                        <li><i className="fi fi-rr-dewpoint"></i>
+                            <span><h3>{weather?.weather[0].description}</h3><p>Weather description</p></span>
                         </li>
-                        <li><h3 id="wind_Speed" >{weather?.wind.speed}</h3>
-                            <span><i className="fi fi-rr-wind"></i><p>Wind speed</p></span>
+                        <li><i className="fi fi-rr-wind"></i>
+                            <span><h3 id="wind_Speed" >{weather?.wind.speed}</h3><p>Wind speed</p></span>
                         </li>
-                        <li><h3 id='clouds'>{weather?.clouds.all}</h3>
-                            <span><i className="fi fi-rr-cloud-sun"></i><p>Clouds</p></span>
+                        <li>
+                        <i className="fi fi-rr-cloud-sun"></i>
+                            <span><h3 id='clouds'>{weather?.clouds.all}</h3><p>Clouds</p></span>
                         </li>
-                        <li><h3 id='pressure'>{`${pressure}`}</h3>
-                            <span><i className="fi fi-rr-tire-pressure-warning"></i><p>Pressure</p></span>
+                        <li>
+                        <i className="fi fi-rr-tire-pressure-warning"></i>
+                            <span><h3 id='pressure'>{`${pressure}`}</h3><p>Pressure</p></span>
                         </li>
                     </ul>
                     <button className='glassEffect' onClick={changeTemp}><p>Convertir a</p> <strong>{tempUnitInv}</strong></button>
