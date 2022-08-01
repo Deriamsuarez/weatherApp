@@ -21,7 +21,7 @@ const WeatherCard = ({ setBg, lat, lon }) => {
             axios.get(url)
                 .then(res => {
                     setWeather(res.data)
-                    setTemp(((res.data.main.temp) / 10).toFixed(1))
+                    setTemp(((res.data.main.temp) - 273.1).toFixed(1))
                     setIcon(res.data.weather[0].icon)
                     setLoader(false)
                 })
@@ -78,8 +78,8 @@ const WeatherCard = ({ setBg, lat, lon }) => {
                 <div className="weatherCard card glassEffect">
                     <span className='temperatureSpan'><img src={`https://openweathermap.org/img/wn/${icon}@2x.png`}/><strong id='temp'>{`${temp}${temptUnit}`}</strong></span>
                     <ul>
-                        <li><i className="fi fi-rr-dewpoint"></i>
-                            <span><h3>{weather?.weather[0].description}</h3><p>Weather description</p></span>
+                        <li className='descrptionWeather'>
+                            <span><h3>{weather?.weather[0].description}</h3><p>Description</p></span>
                         </li>
                         <li><i className="fi fi-rr-wind"></i>
                             <span><h3 id="wind_Speed" >{weather?.wind.speed}</h3><p>Wind speed</p></span>

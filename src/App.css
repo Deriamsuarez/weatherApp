@@ -84,8 +84,8 @@ justify-content: center;
 }
 
 .weatherCardContainer {
-  height: 665px;
-  min-height: 650px;
+  height: 575px;
+  min-height: 550px;
   width: 500px;
   transition: 1s;
   display: flex;
@@ -130,7 +130,7 @@ justify-content: center;
 
 .temperatureSpan {
   font-size: 35px;
-  margin: 10px;
+
   /* border: 1px dashed black; */
   width: 190px;
   display: flex;
@@ -138,13 +138,25 @@ justify-content: center;
   align-items: center;
 }
 
+.descrptionWeather{
+  /* border: 1px black dashed; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.descrptionWeather>span{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
 
 ul {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
   list-style: none;
+  width: 200px;
 }
 
 .temperatureSpan {
@@ -170,8 +182,6 @@ li{
 li>span {
   display: flex;
   flex-direction: column;
-  /* gap: 0.3em; */
-  /* border: 1px black dashed; */
 }
 
 h3{
