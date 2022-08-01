@@ -9,7 +9,7 @@ const WeatherCard = ({ setBg, lat, lon }) => {
     const [weather, setWeather] = useState()
     const [temp, setTemp] = useState(0)
     const [temptUnit, setTempUnit] = useState('°C')
-    const [tempUnitInv, settempUnitInv] = useState('°F')
+    const [tempUnitInv, settempUnitInv] = useState('°C')
     const [loader, setLoader] = useState(true)
     const [icon, setIcon] = useState()
     let pressure = parseInt(weather?.main.pressure / 100);
