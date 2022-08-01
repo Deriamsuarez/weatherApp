@@ -89,7 +89,7 @@ const WeatherCard = ({ setBg, lat, lon }) => {
                             <span><h3 id='clouds'>{weather?.clouds.all}</h3><p>Clouds</p></span>
                         </li>
                         <li>
-                        <i className="fi fi-rr-tire-pressure-warning"></i>
+                        <i className="fi fi-rr-temperature-high"></i>
                             <span><h3 id='pressure'>{`${pressure}`}</h3><p>Pressure</p></span>
                         </li>
                     </ul>
